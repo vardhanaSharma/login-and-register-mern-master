@@ -70,11 +70,14 @@ const Login = ({ setLoginUser}) => {
                         className="input-material"
                         id="login-username"
                         type="text"
-                        name="loginUsername"
+                        name="email"
+                        value={user.email}
+                        onChange={handleChange}
                         autoComplete="off"
                         required
                         data-validate-field="loginUsername"
                       />
+
                       <label className="label-material" htmlFor="login-username">
                         User Name
                       </label>
@@ -84,7 +87,9 @@ const Login = ({ setLoginUser}) => {
                         className="input-material"
                         id="login-password"
                         type="password"
-                        name="loginPassword"
+                        name="password"
+                        value={user.password} 
+                        onChange={handleChange}
                         required
                         data-validate-field="loginPassword"
                       />
@@ -92,7 +97,7 @@ const Login = ({ setLoginUser}) => {
                         Password
                       </label>
                     </div>
-                    <button className="btn btn-primary mb-3" id="login" type="submit">
+                    <button className="btn btn-primary mb-3" onClick={login} id="login" type="submit">
                       Login
                     </button>
                     <br />
@@ -101,9 +106,12 @@ const Login = ({ setLoginUser}) => {
                     </a>
                     <br />
                     <small className="text-gray-500">Do not have an account? </small>
-                    <a className="text-sm text-paleBlue" href="register.html">
-                      Signup
-                    </a>
+                    {/* <a className="text-sm text-paleBlue" onClick={() => history.push("/register")}> */}
+                      {/* Signup */}
+                    {/* </a> */}
+                    <button className="btn btn-primary mb-3" onClick={() => history.push("/register")}>
+                    Signup
+                    </button>
                   </form>
                 </div>
               </div>
